@@ -151,14 +151,58 @@ h1 {
     background: rgba(255, 255, 255, 0.95);
     /* ... rest of your existing card styles ... */
 }
+
+.poster-container {
+    text-align: center; /* Centers the image */
+    padding: 20px;
+
+
+  }
+  
+  .responsive-img {
+    max-width: 100%;    /* Ensures it doesn't overflow the screen */
+    height: auto;       /* Maintains aspect ratio */
+    border-radius: 8px; /* Optional: rounds the corners slightly */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Optional: adds a nice shadow */
+  }
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: #333; /* Solid text color */
+    font-family: sans-serif;
+  }
+
+  /* This creates the transparent background */
+  .hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url('walkathon.png'); /* Your walking silhouettes */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3; /* Adjust this for more or less transparency */
+    z-index: -1;   /* Keeps the image behind the text */
+  }
     </style>
 </head>
 <body>
-
+<div class="hero-section">
+  <h1 style="color: gold;font-family:'Papyrus', fantasy;font-size:50px">Walkathon 2K26</h1>
+</div>
 <div class="container">
     <div class="card">
 <img src="interact.png" alt="Interact Logo" class="interact-logo">
         <div class="header">
+<div class="poster-container">
+   
+</div>
+
             <img src="school_logo.png" alt="School Logo">
             <h1>CAN-STOP Walkathon</h1>
             <div style="font-size: 1.8rem; color: black;font-weight:bold;">Shraddha Children’s Academy, Padur</div>
