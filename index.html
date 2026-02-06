@@ -14,12 +14,6 @@
             --dark: #2d3436;
             --white: #ffffff;
         }
-h1 {
-            font-family: Georgia, 'Times New Roman', serif;
-            font-weight: 700;
-            text-transform: uppercase; /* Keeps your current styling */
-            letter-spacing: 2px;
-        }
 
         body {
             margin: 0;
@@ -27,20 +21,21 @@ h1 {
             background: linear-gradient(135deg, #6a1b9a 0%, #303f9f 100%);
             color: var(--dark);
             min-height: 100vh;
-            padding: 20px 0;
+            padding: 10px 0;
         }
 
         .container {
             max-width: 800px;
             margin: auto;
-            padding: 15px;
+            padding: 10px;
         }
 
         .card {
+            position: relative;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             border-radius: 20px;
-            padding: 30px;
+            padding: 20px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.3);
             animation: fadeIn 0.8s ease-out;
         }
@@ -50,30 +45,76 @@ h1 {
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .header { text-align: center; margin-bottom: 30px; }
-        .header img { height: 100px; transition: transform 0.3s; }
-        .header img:hover { transform: scale(1.05); }
+        /* Mobile-Friendly Header Logos */
+        .top-logos {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .top-logos img {
+            height: 50px;
+            width: auto;
+        }
 
-        h1 { color: var(--primary); font-size: 2rem; margin: 15px 0 5px; text-transform: uppercase; letter-spacing: 1px; }
-        .tagline { color: #555; font-style: italic; font-size: 1.1rem; }
+        .header { text-align: center; margin-bottom: 30px; }
+        .header img { height: 80px; transition: transform 0.3s; }
+        
+        h1 { 
+            color: var(--primary); 
+            font-size: clamp(1.5rem, 6vw, 2rem); 
+            margin: 15px 0 5px; 
+            text-transform: uppercase; 
+            letter-spacing: 1px;
+            font-family: Georgia, 'Times New Roman', serif;
+        }
+        
+        .tagline { color: #555; font-style: italic; font-size: 1rem; }
+
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            text-align: center;
+        }
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url('walkathon.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.3;
+            z-index: -1;
+        }
+        .hero-section h1 {
+            color: gold;
+            font-family: 'Papyrus', fantasy;
+            font-size: clamp(2rem, 10vw, 50px) !important;
+            margin: 0;
+        }
 
         .countdown-container {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 10px;
             margin: 25px 0;
             background: var(--dark);
             padding: 15px;
             border-radius: 12px;
             color: white;
         }
-        .time-box { text-align: center; min-width: 60px; }
-        .time-box span { display: block; font-size: 1.5rem; font-weight: bold; color: var(--secondary); }
-        .time-box label { font-size: 0.7rem; text-transform: uppercase; }
+        .time-box { text-align: center; min-width: 50px; flex: 1; }
+        .time-box span { display: block; font-size: 1.2rem; font-weight: bold; color: var(--secondary); }
+        .time-box label { font-size: 0.6rem; text-transform: uppercase; }
 
         .info-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 15px;
             margin-top: 20px;
         }
@@ -83,28 +124,26 @@ h1 {
             padding: 18px;
             border-left: 5px solid var(--primary);
             border-radius: 8px;
-            transition: 0.3s;
         }
-        .box:hover { background: #f0e0ff; transform: translateX(5px); }
         .label { font-weight: bold; color: var(--primary); display: block; margin-bottom: 4px; }
 
         .qr-section { text-align: center; margin-top: 40px; border-top: 1px solid #eee; padding-top: 30px; }
-        .qr-code { background: white; padding: 10px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .qr-code { background: white; padding: 10px; border-radius: 10px; max-width: 150px; }
 
-        .btn-group { margin-top: 20px; }
         .register-btn {
             background: linear-gradient(45deg, #ffd700, #f4b400);
             border: none;
-            padding: 15px 40px;
+            padding: 15px 30px;
             font-size: 18px;
             font-weight: bold;
             border-radius: 50px;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(244, 180, 0, 0.4);
+            width: 100%;
+            max-width: 300px;
             transition: 0.3s;
         }
-        .register-btn:hover { transform: scale(1.05); box-shadow: 0 6px 20px rgba(244, 180, 0, 0.6); }
 
+        /* TICKET STYLES - UNCHANGED */
         #ticket-wrap { display: none; margin-top: 30px; }
         .ticket {
             background: linear-gradient(135deg, #f9d976 0%, #f39f0b 100%);
@@ -121,92 +160,48 @@ h1 {
             border-radius: 5px; margin-top: 15px; cursor: pointer; font-size: 14px;
         }
 
-        .logos { display: flex; justify-content: center; gap: 35px; 
-                flex-wrap: wrap; margin-top: 40px; opacity: 1; 
+        .logos { 
+        display: flex; 
+        justify-content: center; 
+        gap: 30px; 
+        flex-wrap: wrap; 
+        margin-top: 40px; 
+    }
+        .logos img { 
+        height: 60px; 
+        width: auto; 
+        transition: transform 0.3s;
+        /* Removed all filters to keep original colors */
+        filter: none !important; 
+    }
+       .zozo-logo { 
+        filter: none !important; 
+    }
+.logos img:hover {
+        transform: scale(1.1);
+    }
 
-}
-.zozo-logo {
-    filter: invert(18%) sepia(87%) saturate(3015%) hue-rotate(272deg) brightness(89%) contrast(106%);
-}
-.logos img { height: 70px; /* Increased from 50px to 70px */width: auto;
-                     filter: brightness(1.1); /* Slightly boosts the brightness of the images */
-                     transition: transform 0.3s ease, filter 0.3s ease; }
-	.logos img:hover {transform: scale(1.1); /* Grows slightly when hovered */filter: brightness(1.2); /* Gets even brighter on hover */
-}
-
-        .footer { text-align: center; margin-top: 30px; font-size: 14px; color: rgba(255,255,255,0.8); }
-/* Position the Interact logo in the top right */
-.interact-logo {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    height: 60px; /* Adjust size as needed */
-    width: auto;
-    z-index: 10;
-}
-
-/* Ensure the card container is the reference point for the absolute position */
-.card {
-    position: relative; /* This is crucial */
-    background: rgba(255, 255, 255, 0.95);
-    /* ... rest of your existing card styles ... */
-}
-
-.poster-container {
-    text-align: center; /* Centers the image */
-    padding: 20px;
-
-
-  }
-  
-  .responsive-img {
-    max-width: 100%;    /* Ensures it doesn't overflow the screen */
-    height: auto;       /* Maintains aspect ratio */
-    border-radius: 8px; /* Optional: rounds the corners slightly */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Optional: adds a nice shadow */
-  }
-
-.hero-section {
-    position: relative;
-    width: 100%;
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    color: #333; /* Solid text color */
-    font-family: sans-serif;
-  }
-
-  /* This creates the transparent background */
-  .hero-section::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background-image: url('walkathon.png'); /* Your walking silhouettes */
-    background-size: cover;
-    background-position: center;
-    opacity: 0.3; /* Adjust this for more or less transparency */
-    z-index: -1;   /* Keeps the image behind the text */
-  }
+        .footer { text-align: center; margin-top: 30px; font-weight: bold; color: rgba(255,255,255,0.8); padding-bottom: 20px; }
     </style>
 </head>
 <body>
+
 <div class="hero-section">
-  <h1 style="color: gold;font-family:'Papyrus', fantasy;font-size:50px">Walkathon 2K26</h1>
-</div>
-<div class="container">
-    <div class="card">
-<img src="interact.png" alt="Interact Logo" class="interact-logo">
-        <div class="header">
-<div class="poster-container">
-   
+  <h1>Walkathon 2K26</h1>
 </div>
 
+<div class="container">
+    <div class="card">
+        <div class="top-logos">
+            <img src="rotary.png" alt="Rotary Logo">
+            <img src="interact.png" alt="Interact Logo">
+        </div>
+
+        <div class="header">
             <img src="school_logo.png" alt="School Logo">
             <h1>CAN-STOP Walkathon</h1>
-            <div style="font-size: 1.8rem; color: black;font-weight:bold;">Shraddha Children’s Academy, Padur</div>
-            <div class="tagline">"Together, we walk for cancer awareness & hope"</div>
+            <div style="font-size: 1.2rem; color: black; font-weight: bold;">Shraddha Children’s Academy, Padur</div>
+            <div class="tagline">"Together, we walk for Cancer Awareness & Hope"</div>
         </div>
 
         <div class="countdown-container" id="countdown">
@@ -217,32 +212,25 @@ h1 {
         </div>
 
         <div class="info-grid">
-	
-            <div class="box">
-                <span class="label">🗓 DATE & TIME</span>
-                Sunday, 22nd February 2026 | 6:00 AM
-            </div>
-            <div class="box">
-                <span class="label">📍 VENUE</span>
-                Shraddha Children’s Academy, Padur
-            </div>
-            <div class="box">
-                <span class="label">🏁 CATEGORY</span>
-                3K / 5K – Walk & Run (Ages 10+)
-            </div>
-            <div class="box">
-                <span class="label">💰 REGISTRATION</span>
-                ₹150/- (Ends 15th Feb)
-            </div>
+            <div class="box"><span class="label">🗓 DATE & TIME</span>Sunday, 22nd February 2026 | 6:00 AM</div>
+            <div class="box"><span class="label">📍 VENUE</span>Shraddha Children’s Academy, Padur</div>
+            <div class="box"><span class="label">🏁 CATEGORY</span>3K / 5K – Walk & Run (Ages 10+)</div>
+            <div class="box"><span class="label">💰 REGISTRATION</span>₹150/- (Ends 15th Feb)</div>
+            <div class="box"><span class="label">🏅 Medals & 📜 Certificates</span>for all participants</div>
+            <div class="box"><span class="label">👕 T-shirts & 🥤 Refreshments</span>for all participants</div>
         </div>
-	<div style="text-align: center; margin-top: 30px; font-weight: bold; font-size: 1.5rem; color: var(--primary);">
-    CONTACT US: <br>
-    +91 95972 60266 | +91 83174 16034
-</div>
+
+        <div style="text-align: center; margin-top: 30px; font-weight: bold; font-size: 1.2rem; color: var(--primary);">
+            CONTACT US: <br>
+            <h3>+91 9597260266</h3>
+            <h3>+91 8317416034</h3>
+        </div>
+
         <div class="qr-section">
             <h3>Ready to make a difference?</h3>
             <img class="qr-code" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://docs.google.com/forms/d/11ZM7QUil6g3nSRj7YY67Rw9GRqAPtt6FIry88eRwZf4/edit?ts=69846b5d" alt="QR Code">
             <div class="btn-group">
+                <br>
                 <button class="register-btn" onclick="registerNow()">REGISTER & GET TICKET</button>
             </div>
         </div>
@@ -263,14 +251,14 @@ h1 {
         </div>
 
         <div class="logos">
-            <img src="sethu-fc.png" alt="Sethu FC">
-            <img src="promed.png" alt="ProMed Hospital">
-            <img src="zozo.png" alt="ZOZO" class="zozo-logo">
-            <img src="casagrand.png" alt="Casagrand">
-        </div>
+            <img src="sethu-fc.png" alt="Sethu FC" class="zozo-logo">
+            <img src="promed.png"  alt="ProMed Hospital">                  
+            <img src="zozo.png"  alt="ZOZO" class="zozo-logo">
+        </div>                       
     </div>
-    <div class="footer">An initiative from Shraddha Children’s Academy, Padur</div>
-</div>
+</div>   
+
+<div class="footer">An initiative by Shraddha Children’s Academy, Padur</div>    
 
 <script>
     const eventDate = new Date("Feb 22, 2026 06:00:00").getTime();
@@ -299,7 +287,6 @@ h1 {
         const ticketNum = "SCA-" + Math.floor(100000 + Math.random() * 900000);
         document.getElementById("ticketId").innerText = ticketNum;
         document.getElementById("ticket-wrap").style.display = "block";
-        
         window.open("https://docs.google.com/forms/d/11ZM7QUil6g3nSRj7YY67Rw9GRqAPtt6FIry88eRwZf4/edit?ts=69846b5d", "_blank");
         document.getElementById("ticket-wrap").scrollIntoView({ behavior: 'smooth' });
     }
@@ -307,25 +294,14 @@ h1 {
     function downloadPDF() {
         const element = document.getElementById('ticket-pdf-content');
         const btn = document.getElementById('dl-btn');
-        
-        // Visual feedback
         btn.innerText = "Generating...";
-        
         const opt = {
-            margin:       0.5,
-            filename:     'Walkathon_Ticket.pdf',
-            image:        { type: 'jpeg', quality: 0.98 },
-            html2canvas:  { 
-                scale: 3, 
-                useCORS: true, 
-                letterRendering: true,
-                scrollX: 0,
-                scrollY: 0
-            },
-            jsPDF:        { unit: 'in', format: 'letter', orientation: 'landscape' }
+            margin: 0.5,
+            filename: 'Walkathon_Ticket.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 3, useCORS: true },
+            jsPDF: { unit: 'in', format: 'letter', orientation: 'landscape' }
         };
-
-        // Use promise to reset button text after download
         html2pdf().set(opt).from(element).save().then(() => {
             btn.innerText = "⬇️ Download Ticket as PDF";
         });
