@@ -15,6 +15,7 @@
             --white: #ffffff;
         }
 
+
         body {
             margin: 0;
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -58,7 +59,7 @@
         }
 
         .header { text-align: center; margin-bottom: 30px; }
-        .header img { height: 80px; transition: transform 0.3s; }
+        .header img { height: 200px; transition: transform 0.3s; }
         
         h1 { 
             color: var(--primary); 
@@ -69,7 +70,9 @@
             font-family: Georgia, 'Times New Roman', serif;
         }
         
-        .tagline { color: #555; font-style: italic; font-size: 1rem; }
+        .tagline { color: #000; font-style: italic; font-size: 1rem; }
+        .tagline1 { margin-left:200px;margin-top:20px;padding:0.5px;color: #000; font-style: italic; font-size: 1.2rem;font-weight:bold }
+
 
         .hero-section {
             position: relative;
@@ -109,7 +112,7 @@
             color: white;
         }
         .time-box { text-align: center; min-width: 50px; flex: 1; }
-        .time-box span { display: block; font-size: 1.2rem; font-weight: bold; color: var(--secondary); }
+        .time-box span { display: block; font-size: 1.7rem; font-weight: bold; color: var(--secondary); }
         .time-box label { font-size: 0.6rem; text-transform: uppercase; }
 
         .info-grid {
@@ -141,15 +144,37 @@
             width: 100%;
             max-width: 300px;
             transition: 0.3s;
+           
         }
+.popup {
+    display: inline-block;
+    background: #55cc89; /* Bright yellow background */
+    color: #000; /* Black text for contrast */
+    font-weight: bold; /* Bold text */
+    font-size: 1.1rem; /* Bigger text */
+    padding: 15px 30px;
+    border-radius: 8px;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: popupAnim 2s ease-in-out infinite; /* repeat forever */
+    text-shadow: 0 0 10px #fff, 0 0 20px #ff0, 0 0 30px #ff0; /* Glow effect */
+    box-shadow: 0 0 15px #ff0; /* Glow around box */
+  }
 
+  /* Animation: fade in, stay, fade out */
+  @keyframes popupAnim {
+    0% { opacity: 0; transform: scale(0.8); }
+    10% { opacity: 1; transform: scale(1); }
+    80% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.8); }
+  }
         /* TICKET STYLES - UNCHANGED */
         #ticket-wrap { display: none; margin-top: 30px; }
         .ticket {
             background: linear-gradient(135deg, #f9d976 0%, #f39f0b 100%);
             color: #4b2e00;
-            border-radius: 15px;
-            padding: 25px;
+            border-radius: 12px;
+            padding: 15px;
             text-align: center;
             border: 2px dashed #4b2e00;
             position: relative;
@@ -175,7 +200,7 @@
         filter: none !important; 
     }
        .zozo-logo { 
-        filter: none !important; 
+        height:1000px;width:600;
     }
 .logos img:hover {
         transform: scale(1.1);
@@ -196,10 +221,9 @@
             <img src="rotary.png" alt="Rotary Logo">
             <img src="interact.png" alt="Interact Logo">
         </div>
-
         <div class="header">
             <img src="school_logo.png" alt="School Logo">
-            <h1>CAN-STOP Walkathon</h1>
+            <img src="sethu-fc.png" alt="Sethu FC" class="zozo-logo"><h1> CAN-STOP Walkathon</h1>
             <div style="font-size: 1.2rem; color: black; font-weight: bold;">Shraddha Children’s Academy, Padur</div>
             <div class="tagline">"Together, we walk for Cancer Awareness & Hope"</div>
         </div>
@@ -220,29 +244,27 @@
             <div class="box"><span class="label">👕 T-shirts & 🥤 Refreshments</span>for all participants</div>
         </div>
 
-        <div style="text-align: center; margin-top: 30px; font-weight: bold; font-size: 1.2rem; color: var(--primary);">
-            CONTACT US: <br>
-            <h3>+91 9597260266</h3>
-            <h3>+91 8317416034</h3>
-        </div>
-
-        <div class="qr-section">
-            <h3>Ready to make a difference?</h3>
-            <img class="qr-code" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://docs.google.com/forms/d/11ZM7QUil6g3nSRj7YY67Rw9GRqAPtt6FIry88eRwZf4/edit?ts=69846b5d" alt="QR Code">
+       <div class="tagline1">"One Morning. One Cause. One Community."</div>
+<div class="qr-section">
+          <div class="popup">  Ready to make a difference?</div>
+         <!--   <img class="qr-code" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://docs.google.com/forms/d/11ZM7QUil6g3nSRj7YY67Rw9GRqAPtt6FIry88eRwZf4/edit?ts=69846b5d" alt="QR Code">-->
             <div class="btn-group">
                 <br>
                 <button class="register-btn" onclick="registerNow()">REGISTER & GET TICKET</button>
             </div>
         </div>
-
+       <div style="text-align: center; margin-top: 30px; font-weight: bold; font-size: 1.2rem; color: var(--primary);">
+            CONTACT US: <br>
+            <h3>+91 9597260266</h3>
+            <h3>+91 8317416034</h3>
+        </div>
         <div id="ticket-wrap">
             <div id="ticket-pdf-content" class="ticket">
-                <div style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px;">Official Entry Pass</div>
-                <h3>🎫 GOLDEN ENTRY TICKET</h3>
+                <h1>🎫 GOLDEN ENTRY TICKET</h1>
                 <div style="margin: 10px 0; font-weight: bold; border: 1px solid #4b2e00; display: inline-block; padding: 5px 15px;">
                     ID: <span id="ticketId"></span>
                 </div>
-                <div style="font-size: 1.1rem; margin-top: 10px;">Shraddha CAN-STOP Walkathon</div>
+                <div style="font-size: 1.2rem; margin-top: 10px;">Shraddha CAN-STOP Walkathon</div>
                 <div style="font-size: 0.9rem;">Feb 22, 2026 • 6:00 AM • SCA Padur</div>
             </div>
             <div style="text-align:center;">
@@ -251,7 +273,7 @@
         </div>
 
         <div class="logos">
-            <img src="sethu-fc.png" alt="Sethu FC" class="zozo-logo">
+            
             <img src="promed.png"  alt="ProMed Hospital">                  
             <img src="zozo.png"  alt="ZOZO" class="zozo-logo">
         </div>                       
@@ -261,51 +283,75 @@
 <div class="footer">An initiative by Shraddha Children’s Academy, Padur</div>    
 
 <script>
-    const eventDate = new Date("Feb 22, 2026 06:00:00").getTime();
+   const eventDate = new Date("Feb 22, 2026 06:00:00").getTime();
 
-    const timer = setInterval(function() {
-        const now = new Date().getTime();
-        const distance = eventDate - now;
+const timer = setInterval(function() {
+    const now = new Date().getTime();
+    const distance = eventDate - now;
 
-        const d = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const s = Math.floor((distance % (1000 * 60)) / 1000);
+    const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const s = Math.floor((distance % (1000 * 60)) / 1000);
 
-        document.getElementById("days").innerText = d.toString().padStart(2, '0');
-        document.getElementById("hours").innerText = h.toString().padStart(2, '0');
-        document.getElementById("mins").innerText = m.toString().padStart(2, '0');
-        document.getElementById("secs").innerText = s.toString().padStart(2, '0');
+    document.getElementById("days").innerText = d.toString().padStart(2, '0');
+    document.getElementById("hours").innerText = h.toString().padStart(2, '0');
+    document.getElementById("mins").innerText = m.toString().padStart(2, '0');
+    document.getElementById("secs").innerText = s.toString().padStart(2, '0');
 
-        if (distance < 0) {
-            clearInterval(timer);
-            document.getElementById("countdown").innerHTML = "EVENT HAS STARTED!";
-        }
-    }, 1000);
+    if (distance < 0) {
+        clearInterval(timer);
+        document.getElementById("countdown").innerHTML = "EVENT HAS STARTED!";
+    }
+}, 1000);
 
-    function registerNow() {
-        const ticketNum = "SCA-" + Math.floor(100000 + Math.random() * 900000);
-        document.getElementById("ticketId").innerText = ticketNum;
-        document.getElementById("ticket-wrap").style.display = "block";
-        window.open("https://docs.google.com/forms/d/11ZM7QUil6g3nSRj7YY67Rw9GRqAPtt6FIry88eRwZf4/edit?ts=69846b5d", "_blank");
-        document.getElementById("ticket-wrap").scrollIntoView({ behavior: 'smooth' });
+function registerNow() {
+    const ticketNum = "SCA-" + Math.floor(100000 + Math.random() * 900000);
+    document.getElementById("ticketId").innerText = ticketNum;
+    
+    // Force visibility
+    const wrap = document.getElementById("ticket-wrap");
+    wrap.style.display = "block";
+    wrap.style.visibility = "visible";
+    wrap.style.opacity = "1";
+
+    window.open("https://docs.google.com/forms/d/11ZM7QUil6g3nSRj7YY67Rw9GRqAPtt6FIry88eRwZf4/edit?ts=69846b5d", "_blank");
+    wrap.scrollIntoView({ behavior: 'smooth' });
+}
+
+function downloadPDF() {
+    const element = document.getElementById('ticket-pdf-content');
+    const btn = document.getElementById('dl-btn');
+    
+    // Check if the ticket ID is actually filled
+    if(document.getElementById("ticketId").innerText === "") {
+        alert("Please click 'Register' first to generate a ticket number.");
+        return;
     }
 
-    function downloadPDF() {
-        const element = document.getElementById('ticket-pdf-content');
-        const btn = document.getElementById('dl-btn');
-        btn.innerText = "Generating...";
-        const opt = {
-            margin: 0.5,
-            filename: 'Walkathon_Ticket.pdf',
-            image: { type: 'jpeg', quality: 0.98 },
-            html2canvas: { scale: 3, useCORS: true },
-            jsPDF: { unit: 'in', format: 'letter', orientation: 'landscape' }
-        };
-        html2pdf().set(opt).from(element).save().then(() => {
-            btn.innerText = "⬇️ Download Ticket as PDF";
-        });
-    }
+    btn.innerText = "Processing...";
+
+    const opt = {
+        margin: [0.2, 0.2],
+        filename: 'Walkathon_Ticket.pdf',
+        image: { type: 'jpeg', quality: 1.0 },
+        html2canvas: { 
+            scale: 3, // Higher scale for better clarity
+            useCORS: true, 
+            letterRendering: true,
+            scrollY: 0
+        },
+        jsPDF: { unit: 'in', format: 'a5', orientation: 'landscape' }
+    };
+
+    // Use the Promise-based approach to ensure rendering is complete
+    html2pdf().set(opt).from(element).toPdf().get('pdf').save().then(() => {
+        btn.innerText = "⬇️ Download Ticket as PDF";
+    }).catch(err => {
+        console.error(err);
+        btn.innerText = "Retry Download";
+    });
+}
 </script>
 
 </body>
