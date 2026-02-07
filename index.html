@@ -206,6 +206,16 @@
         transform: scale(1.1);
     }
 
+.sethu-logo {
+            display: flex;              /* Arrange items in a row */
+            align-items: center;        /* Vertically center text with image */
+            gap: 10px;                  /* Space between image and text */
+        }
+        .sethu-logo img {
+            width: 60px;                /* Adjust image size */
+            height: auto;
+        }
+
         .footer { text-align: center; margin-top: 30px; font-weight: bold; color: rgba(255,255,255,0.8); padding-bottom: 20px; }
     </style>
 </head>
@@ -224,13 +234,17 @@
 <div class="header">
             
 <img src="school_logo.png" alt="School Logo">
-            <img src="sethu-fc.png" alt="Sethu FC" class="zozo-logo">
+            
 
-            <h1> CAN-STOP Walkathon</h1>
-            <div style="font-size: 1.2rem; color: black; font-weight: bold;">Shraddha Children’s Academy, Padur</div>
+<div>
+<img src="sethu-fc.png" alt="Sethu FC" class="sethu-logo">            
+<h1> CAN-STOP Walkathon</h1>
+<div style="font-size: 1.2rem; color: black; font-weight: bold;">Shraddha Children’s Academy, Padur</div>
             <div class="tagline">"Together, we walk for Cancer Awareness & Hope"</div>
         </div>
 
+</div>
+            
         <div class="countdown-container" id="countdown">
             <div class="time-box"><span id="days">00</span><label>Days</label></div>
             <div class="time-box"><span id="hours">00</span><label>Hours</label></div>
