@@ -71,7 +71,7 @@
         }
         
         .tagline { color: #000; font-style: italic; font-size: 1rem; }
-        .tagline1 { margin-left:5px;margin-top:20px;padding:0.5px;color: #000; font-style: italic; font-size: 0.8rem;font-weight:bold }
+        .tagline1 { margin-left:1px;margin-top:20px;padding:0.5px;color: #000; font-style: italic; font-size: 0.8rem;font-weight:bold }
 
 
         .hero-section {
@@ -209,7 +209,7 @@
 .sethu-logo {
             display: flex;              /* Arrange items in a row */
             align-items: center;        /* Vertically center text with image */
-            gap: 10px;                  /* Space between image and text */
+            gap: 2px;                  /* Space between image and text */
         }
         .sethu-logo img {
             width: 10px;                /* Adjust image size */
@@ -217,7 +217,30 @@
         }
 
         .footer { text-align: center; margin-top: 30px; font-weight: bold; color: rgba(255,255,255,0.8); padding-bottom: 20px; }
-    </style>
+
+  .image-row {
+            display: flex;           /* Arrange items in a row */
+            gap: 10px;               /* Space between images */
+            justify-content: center; /* Center images horizontally */
+            flex-wrap: wrap;         /* Allow wrapping on small screens */
+        }
+
+
+        /* Style for images */
+        .image-row img {
+            max-width: 100%;   /* Prevent overflow */
+            height: auto;      /* Keep aspect ratio */
+            border-radius: 5px; /* Optional rounded corners */
+        }
+
+
+        /* Optional: Make both images equal width */
+        .image-row img {
+            width: 300px; /* Adjust as needed */
+        } 
+
+
+ </style>
 </head>
 <body>
 
@@ -232,14 +255,13 @@
             <img src="interact.png" alt="Interact Logo">
         </div>
 <div class="header">
-            
+<div class="image-row">         
 <img src="school_logo.png" alt="School Logo">
-            
-
-<div>
-<img src="sethu-fc.png" alt="Sethu FC" class="sethu-logo">            
-<h1> CAN-STOP Walkathon</h1>
+<img src="sethu-fc.png" alt="Sethu FC" class="sethu-logo">          
 </div>
+<div>
+           
+<h1> CAN-STOP Walkathon</h1>
 <div style="font-size: 1.2rem; color: black; font-weight: bold;">Shraddha Children’s Academy, Padur</div>
             <div class="tagline">"Together, we walk for Cancer Awareness & Hope"</div>
         </div>
